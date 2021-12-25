@@ -1,18 +1,21 @@
-# online-toolbox 在线工具箱
+#Online toolbox
 
-ZGIT Network官网的 Online Toolbox 工具箱
-本工具箱使用GPL-3.0协议，您必须遵守该协议
-官方网站: https://www.zyghit.cn/tools/
-本程序仍在开发中，您可能需要过一段时间后才能正式使用。
+Online toolbox toolbox on zgit network official website
 
-在线工具箱为开源组件，您可以在您的任意项目内使用，但您必须保留原作者"云默安"或"至远光辉信息技术"的版权标识。
+This toolkit uses the gpl-3.0 protocol, which you must abide by
 
-**警告，ZGIT在线工具箱不得用于商用！**
+Official website: https://www.zyghit.cn/tools/
 
-前端UI使用了[MDUI](http://www.mdui.org)主体框架。同时,MDUI也是一个开源项目，欢迎前去支持。
+This program is still under development. It may take some time for you to officially use it.
 
-本程序开发环境为php7.4,但是估计不不会受到影响。
+The online toolbox is an open source component, and you can use it in any of your projects, but you must retain the copyright logo of the original author "Yun mo'an" or "Zhiyuan Guanghui information technology".
 
-您可以直接将Online-Toolbox投入生产环境，您可以参照“modify”文件来对工具箱进行定制化操作。
+**Warning, zgit online toolbox must not be used commercially**
 
-感谢您选择ZGIT-Network项目。
+The front-end UI uses [mdui]（ http://www.mdui.org ）Main frame. At the same time, mdui is also an open source project. Welcome to support it.
+
+The development environment of this program is php7 4, but it is estimated that it will not be affected.
+
+You can directly put the online toolbox into the production environment. You can customize the toolbox by referring to the "modify" file.
+
+Thank you for choosing the zgit network project.
