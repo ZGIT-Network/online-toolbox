@@ -106,18 +106,22 @@ Gitee地址:https://gitee.com/yunmoan/online-toolbox
                 <div class="mdui-panel" mdui-panel>
 
                     <div class="mdui-panel-item mdui-panel-item-open" id="INFOres">
-                        
+
                     </div>
 
                     <div class="mdui-panel-item">
-                        <div class="mdui-panel-item-header">Second</div>
+                        <div class="mdui-panel-item-header"></div>
                         <div class="mdui-panel-item-body">
-                            <p>Second content</p>
-                            <p>Second content</p>
-                            <p>Second content</p>
-                            <p>Second content</p>
-                            <p>Second content</p>
-                            <p>Second content</p>
+                            <div class="mdui-textfield">
+                                <input id="" class="mdui-textfield-input" type="text" placeholder="" />
+                            </div>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-a400 float-right" id="" onclick=""></button>
+                            <br>
+                            <div class="mdui-panel" mdui-panel>
+                            <div class="mdui-panel-item mdui-panel-item-open" id="">
+                        
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -135,18 +139,22 @@ Gitee地址:https://gitee.com/yunmoan/online-toolbox
                     <br>
                 </div>
             </div>
-            <div class="mdui-col-sm-6 mdui-col-md-4">
+            <div class="mdui-col-sm-6 mdui-col-md-5">
                 <div class="mdui-panel" mdui-panel>
 
                     <div class="mdui-panel-item">
-                        <div class="mdui-panel-item-header">First</div>
+                        <div class="mdui-panel-item-header">IP查询</div>
                         <div class="mdui-panel-item-body">
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
+                            <div class="mdui-textfield">
+                                <input id="IPci" class="mdui-textfield-input" type="text" placeholder="输入您要查询的IP地址" />
+                            </div>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-a400 float-right" id="IPcb" onclick="IPc()">查询</button>
+                            <br>
+                            <div class="mdui-panel" mdui-panel>
+                            <div class="mdui-panel-item mdui-panel-item-open" id="IPCres">
+                        
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -180,7 +188,8 @@ Gitee地址:https://gitee.com/yunmoan/online-toolbox
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script>
-    var $ = mdui.$;
+        var $ = mdui.$;
+        //ICP查询
         function icp() {
             $("#icpb").text("处理中...");
             var domain = document.getElementById("icp").value;
@@ -240,28 +249,82 @@ Gitee地址:https://gitee.com/yunmoan/online-toolbox
                 xhr.send();
             }
         }
-    $(function() {
-        innerHTML = ''
-        var xhr = new XMLHttpRequest();
-        xhr.open('get','https://api.fxitw.cn/Api/UserInfo?format=json');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                var INFOres = JSON.parse(xhr.responseText);
-                console.log("step 2");
-                if (INFOres.code == 200) {
-                    console.log("ip:" + INFOres.data.ip + "<br>地区:");
-                    document.getElementById("INFOres").innerHTML ='<div class="mdui-panel-item-header"><b>您的客户端信息</b></div>'+'<div class="mdui-panel-item-body">'+ '<p>您的IP：' + INFOres.data.ip + '<br>您所在地区：' + INFOres.data.location + '<br>您的电信运营商：' + INFOres.data.isp + '<br>您的操作系统：'+ INFOres.data.os +'<br>您的浏览器：' + INFOres.data.browser + '</p></div>';
+        //客户端信息查询
+        $(function () {
+            innerHTML = ''
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://api.fxitw.cn/Api/UserInfo?format=json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var INFOres = JSON.parse(xhr.responseText);
+                    
+                    if (INFOres.code == 200) {
+                        console.log("ip:" + INFOres.data.ip + "<br>地区:");
+                        document.getElementById("INFOres").innerHTML = '<div class="mdui-panel-item-header"><b>您的客户端信息</b></div>' + '<div class="mdui-panel-item-body">' + '<p>您的IP：' + INFOres.data.ip + '<br>您所在地区：' + INFOres.data.location + '<br>您的电信运营商：' + INFOres.data.isp + '<br>您的操作系统：' + INFOres.data.os + '<br>您的浏览器：' + INFOres.data.browser + '</p></div>';
+                    } else {
+                    }
+
                 } else {
-                }  
-                  
+                }
+
+            }
+            xhr.send();
+            mdui.mutation();
+        });
+        
+    </script>
+    <script>
+    //IP查询
+        function IPc() {
+            $("#IPcb").text("处理中...");
+            var ipc = document.getElementById("IPci").value;
+            innerHTML = ''
+            if (ipc == '') {
+                mdui.snackbar({
+                    message: '请输入查询的IP地址',
+                    position: 'right-top',
+                });
+                $("#IPcb").text("查询");
+                //mdui.alert('请输入查询的域名');
             } else {
-            }    
-            
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'https://api.fxitw.cn/Api/IP?format=json&ip=' + ipc);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        var IPCres = JSON.parse(xhr.responseText);
+
+                        if (IPCres.code == 200) {
+                            $("#IPcb").text("查询");
+                            mdui.snackbar({
+                                message: '查询成功',
+                                position: 'right-top',
+                            });
+                            document.getElementById("IPCres").innerHTML = '<div class="mdui-panel-item-header">查询结果</div><div class="mdui-panel-item-body">' +
+                                '<ul class="mdui-list">' +
+                                '<li class="mdui-list-item mdui-ripple">IP地址:&nbsp; ' + IPCres.data.ip + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">区域：&nbsp; ' + IPCres.data.location.location + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">网易区域检测：&nbsp; ' + IPCres.data.location.netease + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">PConline区域检测: &nbsp; ' + IPCres.data.location.pconline + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">爱奇艺区域检测：&nbsp; ' + IPCres.data.location.AiQiYi + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">腾讯区域检测：&nbsp; ' + IPCres.data.location.Tencent + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">地区：&nbsp; ' + IPCres.data.location.info.country + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">运营商：&nbsp; ' + IPCres.data.location.info.isp + '</li>' +
+                                '</div></div>';
+
+                        } else {
+                            mdui.snackbar({
+                                message: res.msg,
+                                position: 'right-top',
+                            });
+                            $("#IPcb").text("查询");
+                            //mdui.alert(res.msg);
+                        }
+                    } else {
+                    }
+                }
+                xhr.send();
+            }
         }
-        xhr.send();
-        mdui.mutation();
-    });
-    
     </script>
     <script>
         var $ = mdui.$;

@@ -105,7 +105,7 @@ body{
                 <div class="mdui-panel" mdui-panel>
 
                     <div class="mdui-panel-item mdui-panel-item-open" id="INFOres">
-                        
+
                     </div>
 
                     <div class="mdui-panel-item">
@@ -134,18 +134,22 @@ body{
                     <br>
                 </div>
             </div>
-            <div class="mdui-col-sm-6 mdui-col-md-4">
+            <div class="mdui-col-sm-6 mdui-col-md-5">
                 <div class="mdui-panel" mdui-panel>
 
                     <div class="mdui-panel-item">
-                        <div class="mdui-panel-item-header">First</div>
+                        <div class="mdui-panel-item-header">IP査詢</div>
                         <div class="mdui-panel-item-body">
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
+                            <div class="mdui-textfield">
+                                <input id="IPci" class="mdui-textfield-input" type="text" placeholder="輸入您要査詢的IP地址" />
+                            </div>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-a400 float-right" id="IPcb" onclick="IPc()">査詢</button>
+                            <br>
+                            <div class="mdui-panel" mdui-panel>
+                            <div class="mdui-panel-item mdui-panel-item-open" id="IPCres">
+                        
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -261,6 +265,59 @@ body{
         mdui.mutation();
     });
     
+    </script>
+    <script>
+    //IP查询
+        function IPc() {
+            $("#IPcb").text("處理中...");
+            var ipc = document.getElementById("IPci").value;
+            innerHTML = ''
+            if (ipc == '') {
+                mdui.snackbar({
+                    message: '請輸入查詢的IP地址',
+                    position: 'right-top',
+                });
+                $("#IPcb").text("査詢");
+                //mdui.alert('请输入查询的域名');
+            } else {
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'https://api.fxitw.cn/Api/IP?format=json&ip=' + ipc);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        var IPCres = JSON.parse(xhr.responseText);
+
+                        if (IPCres.code == 200) {
+                            $("#IPcb").text("査詢");
+                            mdui.snackbar({
+                                message: '査詢成功',
+                                position: 'right-top',
+                            });
+                            document.getElementById("IPCres").innerHTML = '<div class="mdui-panel-item-header">查詢結果</div><div class="mdui-panel-item-body">' +
+                                '<ul class="mdui-list">' +
+                                '<li class="mdui-list-item mdui-ripple">IP地址:&nbsp; ' + IPCres.data.ip + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">區域：&nbsp; ' + IPCres.data.location.location + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">網易區域檢測：&nbsp; ' + IPCres.data.location.netease + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">PConline區域檢測: &nbsp; ' + IPCres.data.location.pconline + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">愛奇藝區域檢測：&nbsp; ' + IPCres.data.location.AiQiYi + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">騰訊區域檢測：&nbsp; ' + IPCres.data.location.Tencent + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">地區：&nbsp; ' + IPCres.data.location.info.country + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">運營商：&nbsp; ' + IPCres.data.location.info.isp + '</li>' +
+                                '</div></div>';
+
+                        } else {
+                            mdui.snackbar({
+                                message: res.msg,
+                                position: 'right-top',
+                            });
+                            $("#IPcb").text("査詢");
+                            //mdui.alert(res.msg);
+                        }
+                    } else {
+                    }
+                }
+                xhr.send();
+            }
+        }
     </script>
   <script> 
         var $ = mdui.$;

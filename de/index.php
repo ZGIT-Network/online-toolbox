@@ -135,18 +135,22 @@ body{
                     <br>
                 </div>
             </div>
-            <div class="mdui-col-sm-6 mdui-col-md-4">
+            <div class="mdui-col-sm-6 mdui-col-md-5">
                 <div class="mdui-panel" mdui-panel>
 
                     <div class="mdui-panel-item">
-                        <div class="mdui-panel-item-header">First</div>
+                        <div class="mdui-panel-item-header">IP Abfrage</div>
                         <div class="mdui-panel-item-body">
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
-                            <p>First content</p>
+                            <div class="mdui-textfield">
+                                <input id="IPci" class="mdui-textfield-input" type="text" placeholder="Geben Sie die gewünschte IP-Adresse ein" />
+                            </div>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-a400 float-right" id="IPcb" onclick="IPc()">Abfrage</button>
+                            <br>
+                            <div class="mdui-panel" mdui-panel>
+                            <div class="mdui-panel-item mdui-panel-item-open" id="IPCres">
+                        
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -262,6 +266,59 @@ body{
         mdui.mutation();
     });
     
+    </script>
+    <script>
+    //IP查询
+        function IPc() {
+            $("#IPcb").text("Verarbeitung...");
+            var ipc = document.getElementById("IPci").value;
+            innerHTML = ''
+            if (ipc == '') {
+                mdui.snackbar({
+                    message: 'Bitte geben Sie die IP-Adresse der Abfrage ein',
+                    position: 'right-top',
+                });
+                $("#IPcb").text("Abfrage");
+                //mdui.alert('请输入查询的域名');
+            } else {
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'https://api.fxitw.cn/Api/IP?format=json&ip=' + ipc);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        var IPCres = JSON.parse(xhr.responseText);
+
+                        if (IPCres.code == 200) {
+                            $("#IPcb").text("Abfrage");
+                            mdui.snackbar({
+                                message: 'Abfrage erfolgreich',
+                                position: 'right-top',
+                            });
+                            document.getElementById("IPCres").innerHTML = '<div class="mdui-panel-item-header">Ergebnisse der Abfrage</div><div class="mdui-panel-item-body">' +
+                                '<ul class="mdui-list">' +
+                                '<li class="mdui-list-item mdui-ripple">IP Adresse:&nbsp; ' + IPCres.data.ip + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Region：&nbsp; ' + IPCres.data.location.location + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Erkennung von Netzflächen：&nbsp; ' + IPCres.data.location.netease + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Erkennung von Pconline-Flächen: &nbsp; ' + IPCres.data.location.pconline + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Erkennung von Iqiyi-Gebieten：&nbsp; ' + IPCres.data.location.AiQiYi + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Tencent Area Detection：&nbsp; ' + IPCres.data.location.Tencent + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Region：&nbsp; ' + IPCres.data.location.info.country + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">Betreiber：&nbsp; ' + IPCres.data.location.info.isp + '</li>' +
+                                '</div></div>';
+
+                        } else {
+                            mdui.snackbar({
+                                message: res.msg,
+                                position: 'right-top',
+                            });
+                            $("#IPcb").text("Abfrage");
+                            //mdui.alert(res.msg);
+                        }
+                    } else {
+                    }
+                }
+                xhr.send();
+            }
+        }
     </script>
   <script> 
         var $ = mdui.$;
