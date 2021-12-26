@@ -13,6 +13,6 @@ ZGIT Network官网的 Online Toolbox 工具箱
 
 本程序开发环境为php7.4,但是估计不不会受到影响。
 
-一般情况写，您可以直接将Online-Toolbox投入生产环境，您可以参照“modify”相关的帮助文档来对工具箱网页进行定制化操作。
+一般情况下，您可以直接将Online-Toolbox投入生产环境，您可以参照“modify”相关的帮助文档来对工具箱网页进行定制化操作。
 
 感谢您选择ZGIT-Network项目。
