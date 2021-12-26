@@ -1,22 +1,17 @@
-<!--
-███████╗ ██████╗ ██╗████████╗    ███╗   ██╗███████╗████████╗██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
-╚══███╔╝██╔════╝ ██║╚══██╔══╝    ████╗  ██║██╔════╝╚══██╔══╝██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
-  ███╔╝ ██║  ███╗██║   ██║       ██╔██╗ ██║█████╗     ██║   ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
- ███╔╝  ██║   ██║██║   ██║       ██║╚██╗██║██╔══╝     ██║   ██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
-███████╗╚██████╔╝██║   ██║       ██║ ╚████║███████╗   ██║   ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
-╚══════╝ ╚═════╝ ╚═╝   ╚═╝       ╚═╝  ╚═══╝╚══════╝   ╚═╝    ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ 
-——————版权所有 © 2017-2022 ZGIT Network & ZGIT.保留所有权利—————非法盗用将会受到法律追究！————
--->
 <!DOCTYPE html>
+<!--
+ZGIT-Network 开源项目：遵循GPL-3.0协议，任何人不得以任何方式商业使用。
+作者邮箱: l13230507790@outlook.com
 
+Github地址:https://github.com/ZGIT-Network/online-toolbox
+Gitee地址:https://gitee.com/yunmoan/online-toolbox
+-->
 <html lang="zh-CN">
 
 <head>
     <meta name="baidu-site-verification" content="code-T3SmGL0Gr8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
     <meta name="renderer" content="webkit" />
-    <meta name=“Keywords” content="至远光辉信息技术,至远光辉,ZGIT,ZGIT Network,RCNBBS,云启之域,OpenFrp,工作室,媒体" />
-    <meta name="description" content="至远光辉信息技术 OpenFrp、云启之域论坛、MC云启之域群组服务器运营者。">
     <link rel="icon" type="image/x-icon" href="https://img.zyghit.cn/img/zgit.ico">
     <meta name="force-rendering" content="webkit" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -28,15 +23,12 @@
     <script type="text/javascript">
         window.onload = function () {
             console.log("███████╗ ██████╗ ██╗████████╗\n╚══███╔╝██╔════╝ ██║╚══██╔══╝\n  ███╔╝ ██║  ███╗██║   ██║   \n ███╔╝  ██║   ██║██║   ██║   \n███████╗╚██████╔╝██║   ██║  \n ╚══════╝ ╚═════╝ ╚═╝   ╚═╝   \n                             ");
-            console.log("我们虽是小工作室，但我们欢迎你的到来！\n如果你有一定的技术，你想随我们一起奋斗，那就请加入我们吧！\n\n");
-            console.log("至远·光辉信息技术 联系方式: campus@zyghit.cn");
             console.log("Copyright © 2017-2022 ZGIT Network & ZGIT.All rights reserved.");
         }
 
     </script>
     <style>
         body {
-            /*https://img.zyghit.cn/img/93719055_p0.jpg*/
             background-color: #000;
             background-image: url();
             background-size: cover;
@@ -96,7 +88,7 @@
                         <div class="mdui-text-color-black-secondary">Copyright &copy; 2017-2022 ZGIT Network.All rights
                             reserved.<br>
                             &copy; 至远光辉信息技术 保留所有权利。<br>
-                            光辉主页 Version: Alpha 1.1<br><br>
+                            GPL-3.0<br><br>
                             背景图片来自网络
                             <!--PIXIV, 画师: <b>周憂</b>--><br>
                             本站使用了 MDUI，基于MDUI设计语言编写<br>
@@ -134,7 +126,7 @@
             </div>
         </div>
     </div>
-    <script src="js/mdui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script>
         var $ = mdui.$;
         function copyToClipboard(s) {

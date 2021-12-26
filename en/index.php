@@ -1,11 +1,9 @@
 <!--
-███████╗ ██████╗ ██╗████████╗    ███╗   ██╗███████╗████████╗██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
-╚══███╔╝██╔════╝ ██║╚══██╔══╝    ████╗  ██║██╔════╝╚══██╔══╝██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
-  ███╔╝ ██║  ███╗██║   ██║       ██╔██╗ ██║█████╗     ██║   ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
- ███╔╝  ██║   ██║██║   ██║       ██║╚██╗██║██╔══╝     ██║   ██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
-███████╗╚██████╔╝██║   ██║       ██║ ╚████║███████╗   ██║   ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
-╚══════╝ ╚═════╝ ╚═╝   ╚═╝       ╚═╝  ╚═══╝╚══════╝   ╚═╝    ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ 
-——————版权所有 © 2017-2022 ZGIT Network & ZGIT.保留所有权利—————非法盗用将会受到法律追究！————
+ ZGIT-Network open source project: following the gpl-3.0 agreement, no one shall use it commercially in any way.
+Author email: l13230507790@outlook.com
+
+GitHub address: https://github.com/ZGIT-Network/online-toolbox
+Gitee address: https://gitee.com/yunmoan/online-toolbox
 -->
 <!DOCTYPE html>
 
@@ -27,15 +25,12 @@
 <script type="text/javascript">
             window.onload = function(){
             console.log("███████╗ ██████╗ ██╗████████╗\n╚══███╔╝██╔════╝ ██║╚══██╔══╝\n  ███╔╝ ██║  ███╗██║   ██║   \n ███╔╝  ██║   ██║██║   ██║   \n███████╗╚██████╔╝██║   ██║  \n ╚══════╝ ╚═════╝ ╚═╝   ╚═╝   \n                             ");
-            console.log("我们虽是小工作室，但我们欢迎你的到来！\n如果你有一定的技术，你想随我们一起奋斗，那就请加入我们吧！\n\n");
-            console.log("至远·光辉信息技术 联系方式: campus@zyghit.cn");
             console.log("Copyright © 2017-2022 ZGIT Network & ZGIT.All rights reserved.");
             }
  
 </script>
 <style>
 body{
-    /*https://img.zyghit.cn/img/93719055_p0.jpg*/
    background-color: #000;
 	background-image: url();
 	background-size: cover;
@@ -107,45 +102,167 @@ body{
             </div><br>
         </div>
         <!-- 2 -->
-	    <div class="mdui-col-sm-12 mdui-col-md-9">
-	        <div class="mdui-card mdui-shadow-7">
-                <!-- 卡片内容 -->
-                <div class="mdui-card-content">
-                    <div class="mdui-text-color-black-secondary">123</div>
+	    <div class="mdui-col-sm-6 mdui-col-md-4">
+                <div class="mdui-panel" mdui-panel>
+
+                    <div class="mdui-panel-item mdui-panel-item-open" id="INFOres">
+                        
+                    </div>
+
+                    <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">Second</div>
+                        <div class="mdui-panel-item-body">
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                        </div>
+                    </div>
+
+                    <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">Third</div>
+                        <div class="mdui-panel-item-body">
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                        </div>
+                    </div>
+                    <br>
                 </div>
-            </div><br>
+            </div>
+            <div class="mdui-col-sm-6 mdui-col-md-4">
+                <div class="mdui-panel" mdui-panel>
+
+                    <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">First</div>
+                        <div class="mdui-panel-item-body">
+                            <p>First content</p>
+                            <p>First content</p>
+                            <p>First content</p>
+                            <p>First content</p>
+                            <p>First content</p>
+                            <p>First content</p>
+                        </div>
+                    </div>
+
+                    <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">Second</div>
+                        <div class="mdui-panel-item-body">
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                            <p>Second content</p>
+                        </div>
+                    </div>
+
+                    <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">Third</div>
+                        <div class="mdui-panel-item-body">
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                            <p>Third content</p>
+                        </div>
+                    </div>
+
+                </div>
 	    </div>
     </div>
   </div>
-  <script src="js/mdui.min.js"></script>
-  <!--<script type="text/javascript"> 
-        window.onload=function(){
-            var go_time=new Date("2021/11/7 22:00:00");
-            //  countdown：倒计时
-                 function  countdown(){
-                var now_time=new Date();
-                var alltime =go_time.getTime() -now_time.getTime ();  //总的时间（毫秒）
-               var haoscend =alltime%1000;  //毫秒
-                //console.log(haoscend);
-                var scend = parseInt ((alltime/1000)%60  ) ;  //秒
-                //console.log(scend);
-                var minute =parseInt((alltime/1000/60)%60  ) ;  //  分钟
-               // console.log(minute);
-                var hour =parseInt((alltime/1000/60/60)%24 ) ;   //小时
-               // console.log(hour);
-                var day=parseInt((alltime/1000/60/60/24)%30);   //天数
-               // console.log(day);
-                var month=parseInt((alltime/1000/60/60/24/30)%12); //月
-               // console.log(month);
-                var btime=document.getElementById("block");
-                var time1=document.getElementById("shi_jian");
-                time1.innerHTML = (day+"天"+hour+"时"+minute +"分"+scend +"秒" );
-                setTimeout (countdown ,1);  //不加括号
-            }
-           countdown ();
-        }
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script>
+    var $ = mdui.$;
+        function icp() {
+            $("#icpb").text("处理中...");
+            var domain = document.getElementById("icp").value;
+            innerHTML = ''
+            if (domain == '') {
+                mdui.snackbar({
+                    message: '请输入查询的域名',
+                    position: 'right-top',
+                });
+                $("#sub").text("提交验证");
+                //mdui.alert('请输入查询的域名');
+            } else {
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'https://api.fxitw.cn/Api/ICP?format=json&domain=' + domain);
+                xhr.onreadystatechange = function () {
+                    if (xhr.status != 200) {
+                        mdui.alert("查询失败,请确认域名已备案！");
+                        $("#sub").text("提交验证");
+                    }
+                    if (xhr.readyState === 4) {
+                        var res = JSON.parse(xhr.responseText);
 
-    </script>-->
+                        if (res.code == 200) {
+                            $("#sub").text("提交验证");
+                            mdui.snackbar({
+                                message: '查询成功',
+                                position: 'right-top',
+                            });
+
+                            //mdui.alert("查询成功");
+                            document.getElementById("res").innerHTML = '<div class="card-header border-0"><div class="d-flex justify-content-between">' +
+                                '<h3 class="card-title">查询结果</h3>' +
+                                '</div></div>' +
+                                '<div class="card-body fix-text">' +
+                                '<ul class="mdui-list">' +
+                                '<li class="mdui-list-item mdui-ripple">域名:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.domain + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">网站名称:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.serviceName + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">备案号:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.icp + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">首页地址:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.homeUrl + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">主办方性质:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.class + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">主办方名称:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.unitName + '</li>' +
+                                '<li class="mdui-list-item mdui-ripple">备案通过时间:&nbsp;&nbsp;&nbsp;&nbsp; ' + res.data.time + '</li>' +
+                                '</ul>' +
+                                '</div></div>';
+
+                        } else {
+                            mdui.snackbar({
+                                message: res.msg,
+                                position: 'right-top',
+                            });
+                            $("#sub").text("提交验证");
+                            //mdui.alert(res.msg);
+                        }
+                    } else {
+                    }
+                }
+                xhr.send();
+            }
+        }
+    $(function() {
+        innerHTML = ''
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','https://api.fxitw.cn/Api/UserInfo?format=json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                var INFOres = JSON.parse(xhr.responseText);
+                console.log("step 2");
+                if (INFOres.code == 200) {
+                    console.log("ip:" + INFOres.data.ip + "<br>地区:");
+                    document.getElementById("INFOres").innerHTML ='<div class="mdui-panel-item-header"><b>Your client information</b></div>'+'<div class="mdui-panel-item-body">'+ '<p>Your IP：' + INFOres.data.ip + '<br>Your region：' + INFOres.data.location + '<br>Your telecom operator：' + INFOres.data.isp + '<br>Your operating system：'+ INFOres.data.os +'<br>Your browser：' + INFOres.data.browser + '</p></div>';
+                } else {
+                }  
+                  
+            } else {
+            }    
+            
+        }
+        xhr.send();
+        mdui.mutation();
+    });
+    
+    </script>
   <script> 
         var $ = mdui.$;
         function copyToClipboard(s) {
